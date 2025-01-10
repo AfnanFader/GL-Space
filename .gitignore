@@ -1,0 +1,5 @@
+# bin directories:
+[Bb]uild/
+[Bb]in/
+
+.vscode/
