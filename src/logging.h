@@ -12,6 +12,18 @@
     #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #endif
 
-// #define EXIT
+//----------------------------------------------------------------------------//
+
+#define MSG_LOG_MAC(m) spdlog::info("{} - {} : Line {}",m ,__FILENAME__, __LINE__)
+
+#define WARN_LOG_MAC(m) spdlog::warn("{} - {} : Line {}",m ,__FILENAME__ ,__LINE__)
+
+#define ERROR_LOG_MAC(m)                                          \
+    spdlog::error("{} - {} : Line {}",m ,__FILENAME__ ,__LINE__); \
+    std::exit(EXIT_FAILURE);                                      \
+
+#define GLFW_ERR_LOG_MAC(err, msg)                       \
+    spdlog::error("GLFW Err Code [{}] - {}",err ,msg);   \
+    std::exit(EXIT_FAILURE);                             \
 
 #endif
