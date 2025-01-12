@@ -26,4 +26,8 @@
     spdlog::error("GLFW Err Code [{}] - {}",err ,msg);   \
     std::exit(EXIT_FAILURE);                             \
 
+#define FILE_IO_ERR_LOG_MAC(file)            \
+    spdlog::error("FILE IO ERR - {}",file);  \
+    std::exit(EXIT_FAILURE);                 \
+
 #endif

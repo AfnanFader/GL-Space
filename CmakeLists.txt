@@ -37,6 +37,8 @@ FetchContent_MakeAvailable(spdlog)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
+add_definitions(-DPROJECT_DIRECTORY="${CMAKE_SOURCE_DIR}")
+
 # List out all the source files in /src
 file(GLOB_RECURSE MainSource CONFIGURE_DEPENDS "src/*.cpp")
 
